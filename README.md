@@ -129,3 +129,219 @@ VeraCrypt Container
         │
         ▼
 Final Challenge Artifact
+```
+
+The important forensic principle is **correlation**: no single artifact provides the complete answer. Each stage supplies material required to interpret the next.
+
+---
+
+# 🗂️ Repository Structure
+
+```text
+Management-Wants-a-Word-TryHackMe-Walkthrough/
+│
+├── README.md
+├── _config.yml
+│
+├── Documentation/
+│   └── THM_Management_Wants_a_Word_Documentation.md
+│
+├── Resources/
+│   ├── notes.md
+│   ├── payloads.md
+│   ├── tools.md
+│   ├── references.md
+│   └── remediation.md
+│
+├── Screenshots/
+│   ├── figure-1-room-overview.png
+│   ├── figure-2-final-artifact-redacted.png
+│   └── figure-3-sunrise-storyline.png
+│
+├── docs/
+│   ├── index.md
+│   └── assets/
+│       ├── banner.png
+│       ├── figure-1-room-overview.png
+│       ├── figure-2-final-artifact-redacted.png
+│       ├── figure-3-sunrise-storyline.png
+│       └── css/
+│           └── custom.scss
+│
+└── .github/
+    └── workflows/
+        └── pages.yml
+```
+
+---
+
+# 🧩 Investigation Chain Summary
+
+```text
+Evidence Acquisition
+        │
+        ▼
+Windows Triage Review
+        │
+        ▼
+SAM / SYSTEM Identification
+        │
+        ▼
+NT Hash Recovery
+        │
+        ▼
+DPAPI Master-Key Analysis
+        │
+        ▼
+Chrome Key Recovery
+        │
+        ▼
+Chrome Credential Database Analysis
+        │
+        ▼
+Password Correlation
+        │
+        ▼
+VeraCrypt Container Access
+        │
+        ▼
+Final Artifact
+```
+
+This is a **forensic artifact chain**, not a network exploitation chain. There is no unsupported claim of live initial access, lateral movement, or privilege escalation.
+
+---
+
+# 🔐 Flag Policy
+
+To preserve the educational integrity of the TryHackMe room and discourage plagiarism, the actual challenge flag is **intentionally redacted**.
+
+```text
+[FLAG REDACTED]
+```
+
+The supplied final-artifact screenshot has also been sanitized so that only the flag value is removed while the surrounding invoice evidence remains visible.
+
+---
+
+# 📖 Documentation
+
+The complete technical investigation is available in:
+
+**[`Documentation/THM_Management_Wants_a_Word_Documentation.md`](Documentation/THM_Management_Wants_a_Word_Documentation.md)**
+
+Supporting material is organized under **`Resources/`**, while evidence screenshots are stored in **`Screenshots/`** and duplicated under **`docs/assets/`** for GitHub Pages.
+
+---
+
+# 🖼️ Evidence
+
+| Figure | Description |
+| --- | --- |
+| Figure 1 | TryHackMe room overview and challenge metadata |
+| Figure 2 | Final artifact evidence with the challenge flag redacted |
+| Figure 3 | Supplied Act 4 — Sunrise storyline illustration |
+
+The repository contains only supplied evidence and a sanitized derivative of the supplied final-artifact image. No fake terminal output or fabricated forensic screenshot has been created.
+
+---
+
+# 🛡️ Security Findings
+
+The investigation highlights several security-relevant conditions:
+
+| Finding | Security Significance |
+| --- | --- |
+| Offline SAM/SYSTEM access | Enables local-account credential analysis when protected hives are obtained |
+| DPAPI dependency on user credential material | Compromise of the relevant credential chain can expose protected secrets |
+| Browser-saved credentials | Stored secrets can become recoverable during endpoint forensic analysis |
+| Reusable password recovered from browser storage | Password reuse can bridge independent security boundaries |
+| Encrypted container protected by recoverable password | Container security is weakened when the unlock secret is exposed elsewhere |
+
+These are presented as **security observations from the lab evidence**, not as unsupported production vulnerability ratings.
+
+---
+
+# 📚 Key Learning Outcomes
+
+After completing the investigation, the following practical skills are reinforced:
+
+* Windows forensic triage.
+* Offline registry-hive analysis.
+* SAM/SYSTEM credential relationships.
+* DPAPI artifact correlation.
+* Chrome credential-storage architecture.
+* SQLite database analysis.
+* Encrypted-container investigation.
+* Evidence-driven security reporting.
+
+---
+
+# 🔐 Defensive Perspective
+
+A defensible endpoint configuration should reduce the chance that one compromised artifact can unlock another.
+
+Recommended controls include:
+
+* Protect offline access to Windows credential hives.
+* Use strong account credentials and avoid password reuse.
+* Minimize stored browser credentials on sensitive systems.
+* Protect DPAPI recovery material and user profiles.
+* Apply endpoint disk encryption and secure key management.
+* Monitor unusual access to browser credential databases.
+* Maintain least-privilege access to forensic and administrative tooling.
+* Treat encrypted-container passwords as independent secrets.
+
+---
+
+# 🌐 GitHub Pages
+
+A GitHub Pages site is included using the same Jekyll-based documentation model as the portfolio's reference repository.
+
+The public documentation contains:
+
+* Executive Summary
+* Investigation Methodology
+* Artifact Analysis
+* Credential Recovery Chain
+* Browser Forensics
+* VeraCrypt Analysis
+* Security Findings
+* Defensive Recommendations
+* Lessons Learned
+* Conclusion
+
+---
+
+# ⚠️ Disclaimer
+
+This repository documents analysis performed within an **authorized TryHackMe laboratory**.
+
+The material is provided exclusively for:
+
+* Cybersecurity education.
+* Digital forensics learning.
+* Capture The Flag documentation.
+* Authorized security research.
+
+Do not apply the techniques described here to systems or data without explicit authorization.
+
+---
+
+# 👨‍💻 Author
+
+## **Anurag Ravankar**
+
+Cybersecurity Enthusiast • Penetration Testing • SOC • Digital Forensics
+
+* Windows Security
+* Digital Forensics
+* Capture The Flag (CTF) Writeups
+* TryHackMe Documentation
+* Security Research
+
+---
+
+<p align="center">
+  ⭐ If this documentation helps you understand Windows artifact analysis or forensic reporting methodology, consider starring the repository.
+</p>
