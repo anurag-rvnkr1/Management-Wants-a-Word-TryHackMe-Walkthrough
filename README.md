@@ -330,7 +330,7 @@ Do not apply the techniques described here to systems or data without explicit a
 
 # 👨‍💻 Author
 
-## **Anurag Ravankar**
+## **Anurag Revankar**
 
 Cybersecurity Enthusiast • Penetration Testing • SOC • Digital Forensics
 
