@@ -1,5 +1,5 @@
-title: "TryHackMe CTF"
-description: "Professional CTF documentation."
+title: "Management Wants a Word — TryHackMe"
+description: "Professional Windows forensic documentation covering SAM/SYSTEM, DPAPI, Chrome credential artifacts, VeraCrypt, and evidence correlation."
 
 theme: jekyll-theme-primer
 
