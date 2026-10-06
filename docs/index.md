@@ -328,7 +328,7 @@ Challenge flags are intentionally redacted. The report focuses on the investigat
 | Project | Value |
 | --- | --- |
 | Repository | Management-Wants-a-Word-TryHackMe-Walkthrough |
-| Author | Anurag Ravankar |
+| Author | Anurag Revankar |
 | Category | Digital Forensics |
 | Platform | TryHackMe |
 | Environment | Authorized Training Lab |
